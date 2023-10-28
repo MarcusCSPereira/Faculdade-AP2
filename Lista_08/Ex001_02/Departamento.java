@@ -26,7 +26,7 @@ public class Departamento {
     
     public Professor buscarProfessores(Long cpf){
         for (Professor p : professores) {
-            if (p.getCpf().equals(cpf.toString())) {
+            if (p.getCpf().equals(cpf)) {
                 return p;
             }
         }
@@ -35,7 +35,7 @@ public class Departamento {
 
     public boolean demitirProfessores(Long cpf){
         Professor p = buscarProfessores(cpf);
-        if(p==null){
+        if(p!=null){
             professores.remove(p);
             return true;
         }else{
