@@ -3,10 +3,12 @@ import java.util.Scanner;
 
 public class UniversidadeUI {
     private ArrayList<Departamento> departamentos;
+    private ArrayList<Professor> professores;
     private Scanner scanner;
 
     UniversidadeUI() {
         departamentos = new ArrayList<>();
+        professores = new ArrayList<>();
         scanner = new Scanner(System.in);
     }
 
@@ -103,7 +105,6 @@ public class UniversidadeUI {
     public void menuDepartamento(Departamento departamento) {
         int opcao;
         do {
-            ArrayList<Professor> professores = departamento.informarProfessores();
             System.out.println("\nDepartamento: " + departamento.getNome());
             System.out.println("------------------------------------------");
             System.out.println("1. Adicionar professor");
@@ -157,7 +158,6 @@ public class UniversidadeUI {
     }
 
     public void demitirProfessor(Departamento departamento) {
-        ArrayList<Professor> professores = departamento.informarProfessores();
 
         if (professores.isEmpty()) {
             System.out.println("\nNenhum professor cadastrado. Voltando ao menu...");
@@ -175,7 +175,6 @@ public class UniversidadeUI {
     }
 
     public void listarProfessores(Departamento departamento) {
-        ArrayList<Professor> professores = departamento.informarProfessores();
 
         if (professores.isEmpty()) {
             System.out.println("\nNenhum professor cadastrado. Voltando ao menu...");
