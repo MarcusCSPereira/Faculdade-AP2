@@ -12,10 +12,6 @@ public class Playlist {
         musica = new ArrayList<>();
     }
 
-    public String getNomePlaylist() {
-        return nomePlaylist;
-    }
-
     public Musica pesqMusica(int id) {
         for (Musica m : musica) {
             if (m.getId() == id) {
@@ -103,6 +99,7 @@ public class Playlist {
                     if (musica.isEmpty()) {
                         System.out.println("A sua playlist ainda está vazia");
                     } else {
+                        System.out.println("\nMúsicas da Playlist " + nomePlaylist + ":");
                         listMusica();
                     }
                     break;
