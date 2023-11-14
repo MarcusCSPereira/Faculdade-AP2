@@ -175,7 +175,7 @@ public class UniversidadeUI {
     }
 
     public void listarProfessores(Departamento departamento) {
-
+        professores = departamento.informarProfessores();
         if (professores.isEmpty()) {
             System.out.println("\nNenhum professor cadastrado. Voltando ao menu...");
         } else {
