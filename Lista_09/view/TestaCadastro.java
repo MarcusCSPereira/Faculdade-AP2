@@ -8,17 +8,20 @@ public class TestaCadastro {
     public static void main(String[] args) {
         
         Scanner scan = new Scanner(System.in);
-
+        //Nessa Classe, dentro do main eu crio um cadastro e faço a execução em si do programa, com entrada do usuário e chamada dos métodos.
         System.out.println("Bem vindo ao sistema de cadastro de pessoas");
         System.out.println("Digite o número de pessoas máximas que deseja cadastrar:");
         int qtdMax = scan.nextInt();
         System.out.println("===============================================");
+        //Inicialização do cadastro com a quantidade máxima de pessoas que o usuário deseja cadastrar.
         CadastroPessoa cadastro = new CadastroPessoa(qtdMax);
 
         menu(scan,cadastro);
+        //Chamada do método menu, que é o método que controla o menu do programa, é importante que esse método e todos que ele chamar sejam static, pois estão sendo chamados e executados dentro do main.
     }
     
     public static void menu(Scanner scan, CadastroPessoa cadastro){
+        //Método menu, que controla o menu do programa, onde eu recebo um Scanner e um CadastroPessoa, e com base na entrada do usuário, eu chamo os métodos de acordo com a opção escolhida.
         System.out.println("\nEscolha uma opção:");
         System.out.println("1 - Cadastrar pessoa");
         System.out.println("2 - Imprimir cadastro");
@@ -35,6 +38,7 @@ public class TestaCadastro {
             case 3:
                 telaRetornaQuantidade(scan,cadastro);
             case 4:
+                //Encerra o programa, caso o usuário escolha a opção 4.
                 scan.close();
                 System.exit(0);
                 break;
@@ -44,7 +48,7 @@ public class TestaCadastro {
     }
     
     private static void telaCadastro(Scanner scan, CadastroPessoa cadastro) {
-        
+        //Método telaCadastro, onde eu recebo um Scanner e um CadastroPessoa, e com base na entrada do usuário, eu cadastro uma pessoa no cadastro, caso o cadastro esteja cheio, eu imprimo o cadastro e retorno ao menu.
         if(cadastro.getQtdAtual() == cadastro.getQtdMaxima()){
             System.out.println("\nCadastro cheio, número de pessoas cadastradas: "+cadastro.getQtdAtual()+"\n");
             System.out.println("Listando Cadastro:");
@@ -68,7 +72,7 @@ public class TestaCadastro {
                 System.out.println("Digite o salário do funcionário:");
                 float salario = scan.nextFloat();
                 cadastro.cadastraPessoa(new Funcionario(nome, new Data(dataNascimento), salario));
-                menu(scan, cadastro);
+                menu(scan, cadastro);//Chamada do método menu, para retornar ao menu principal.
                 break;
             case 2:
                 System.out.println("\nDigite o nome do gerente:");
@@ -103,11 +107,13 @@ public class TestaCadastro {
     }
     
     private static void telaImprimeCadastro(Scanner scan,CadastroPessoa cadastro) {
+        //Método telaImprimeCadastro, onde eu recebo um Scanner e um CadastroPessoa, e imprimo o cadastro, caso não haja pessoas cadastradas eu envio uma mensagem de erro, isso é controlado dentro da função imprimeCadastro() da Classe CadastroPessoa, no final de tudo eu retorno ao menu.
         cadastro.imprimeCadastro();
         menu(scan, cadastro);
     }
 
     private static void telaRetornaQuantidade(Scanner scan, CadastroPessoa cadastro) {
+        //Método telaRetornaQuantidade, onde eu recebo um Scanner e um CadastroPessoa para poder chamar o menu novamente , e imprimo a quantidade de pessoas cadastradas, no final de tudo eu retorno ao menu.
         System.out.println("\nQuantidade de pessoas cadastradas: " + cadastro.getQtdAtual());
         menu(scan, cadastro);
     }
