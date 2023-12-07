@@ -1,9 +1,10 @@
 package Lista_10.view;
 
-import Lista_10.controller.Livro;
-import Lista_10.controller.Produto;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+
+import Lista_10.model.Livro;
+import Lista_10.model.Produto;
 
 public class Tela {
     public static void main(String[] args) {

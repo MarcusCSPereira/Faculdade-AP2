@@ -1,5 +1,7 @@
 package Lista_09.controller;
 
+import java.util.Arrays;
+
 import Lista_09.model.*;//Importo todas as classes do pacote model, pois como está em um pacote diferente do pacote model, eu preciso importar para poder usar as classes do pacote model.
 
 public class CadastroPessoa {

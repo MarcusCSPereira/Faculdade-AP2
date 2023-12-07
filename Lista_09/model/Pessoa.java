@@ -9,6 +9,20 @@ public abstract class Pessoa {//Aqui represento a Classe abstrata Pessoa, que n√
         this.dataNascimento = dataNascimento;
     }
 
+    @Override
+    public int hashCode(){
+        return nome.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj){
+        if(obj instanceof Pessoa){
+            Pessoa p = (Pessoa)obj;
+            return nome.equals(p.nome);
+        }
+        return false;
+    }
+
     public String getNome(){
         return nome;
     }

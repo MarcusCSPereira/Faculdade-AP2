@@ -1,15 +1,13 @@
-package Lista_10.controller;
+package Lista_10.model;
 
 public class Livro extends Produto{
     private String autor;
     private int paginas;
-    private String ehGrande;
 
     public Livro(String nome, String autor,int paginas, double preco) {
         super(nome, preco);
         this.autor = autor;
         this.paginas = paginas;
-        ehGrande=ehGrande();
     }
 
     public String ehGrande() {
@@ -23,7 +21,7 @@ public class Livro extends Produto{
         return super.toString()+
                 "\nAutor: " + autor +
                 "\nNúmero de páginas: " + paginas +
-                "\n"+ehGrande;
+                "\n"+ehGrande();
     }
 
 }

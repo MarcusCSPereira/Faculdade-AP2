@@ -1,4 +1,4 @@
-package Lista_10.controller;
+package Lista_10.model;
 
 public class Produto {
     private int codigo;
