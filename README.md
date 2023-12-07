@@ -1,2 +1,2 @@
 # Java-Faculdade
- Atividades da Faculdade
+ Atividades da disciplina AP2.
